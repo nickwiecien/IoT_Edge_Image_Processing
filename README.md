@@ -34,6 +34,8 @@ Inside the `modules/CustomVisionModel` and `modules/ScoreAndAnnotate` directorie
 
 From the VS Code Command pallete, search for `Azure IoT Edge: Build and Push IoT Edge Module` and build and push the amd64 versions of both the `CustomVisionModel` and `ScoreAndAnnotate` modules. 
 
+Open the `SampleImageScoring/deployment.template.json` file and update the bound file path under the ScoreAndAnnotate module container create options (note: this path is currently set to /home/username/Desktop/image_drop:/input). Update the source directory path to point to the `image_drop` folder you created on your VM.
+
 Right-click the `SampleImageScoring/deployment.template.json` file and select Generate IoT Edge Deployment Manifest. Once the new deployment manifest is created - `SampleImageScoring/config/deployment.amd64.json` - right-click and select Create Deployment for Single Device, and select your target device.
 
 
