@@ -1,0 +1,43 @@
+FROM nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu18.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y curl
+
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install -y --no-install-recommends \
+    locate \
+    unzip \
+    libcurl4-openssl-dev \
+    libboost-python-dev \
+    libgtk2.0-dev \
+    libssl-dev libffi-dev python-setuptools
+
+RUN apt-get install -y --no-install-recommends \
+    gcc \
+    build-essential \
+    pkg-config 
+
+RUN apt-get update && apt-get install -y software-properties-common gcc && \
+    add-apt-repository -y ppa:deadsnakes/ppa
+
+RUN apt-get install -y python3.7 python3-pip python3-dev
+
+RUN python3.7 --version
+RUN python3.7 -m pip install --upgrade pip==21.0.1
+RUN python3.7 -m pip install --upgrade setuptools
+RUN python3.7 -m pip install --no-cache-dir numpy~=1.19.2 tensorflow-gpu==2.4.0 flask~=1.1.2 pillow~=7.2.0
+RUN python3.7 -m pip install --no-cache-dir mscviplib==2.200731.16
+
+COPY app /app
+ 
+# Expose the port
+EXPOSE 80
+ 
+# Set the working directory
+WORKDIR /app
+
+# # Run the flask server for the endpoints
+CMD python3.7 -u app.py
+

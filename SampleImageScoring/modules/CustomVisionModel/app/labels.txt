@@ -1,0 +1,8 @@
+Ace_Black
+Ace_Red
+Jack_Black
+Jack_Red
+King_Black
+King_Red
+Queen_Black
+Queen_Red
