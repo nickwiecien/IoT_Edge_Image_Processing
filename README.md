@@ -1,6 +1,6 @@
 # IoT Edge/Custom Vision Sample
 Sample IoT Edge solution that demonstrates how to: 
-* Run an Azure Custom Vision (object detection) model as an edge module with exposed via a RESTful endpoint
+* Run an Azure Custom Vision (object detection) model as an edge module exposed via a RESTful endpoint
 * Score incoming images (added to a target directory on the edge device) using the Custom Vision model
 * Annotate scored images with bounding boxes and labels corresponding to detected objects using OpenCV
 * Save raw/annotated images to Azure Blob Storage on Edge and auto-tier those images to an Azure Storage Account
