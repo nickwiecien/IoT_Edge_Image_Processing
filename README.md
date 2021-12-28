@@ -8,7 +8,7 @@ Sample IoT Edge solution that demonstrates how to:
 
 For the purposes of this demo, the deployed model will detect face suit and color of playing cards and annotate images as is show below. Sample images are included in the `sample_images` dir.
 
-![Annotated Image Sample](img/IMG_2560_annotated.jpg?raw=true "Annotated Image Sample")
+![Annotated Image Sample](SampleImageScoring/img/IMG_2560_annotated.jpg?raw=true "Annotated Image Sample")
 
 ## Required Azure Resources
 The following resources should be provisioned prior to deploying the sample edge solution:
